@@ -40,7 +40,7 @@ class GauganAPI:
     def __init__(self):
         self.api = choice(API)
         self.uuid = "%s,%s-%s" % (
-            datetime.today().strftime("%-m/%d/%Y"),
+            datetime.today().strftime("%m/%d/%Y"),
             int(time() * 1000),
             randint(0, 1000000000),
         )
