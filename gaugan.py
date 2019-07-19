@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-from gimpfu import register, main, gimp, RGB_IMAGE, NORMAL_MODE, pdb
+from gimpfu import register, main, gimp, RGB_IMAGE, NORMAL_MODE, pdb, PF_STRING
 import os, tempfile
 
 import base64
@@ -79,7 +79,7 @@ class GauganAPI:
         )
 
 
-def python_gaugan(img, layer):
+def python_gaugan(img, layer, style="random"):
     if not layer.is_rgb:
         raise ValueError("Expected RGB layer")
     # because pdb cannot save to a buffer, we have to use a temporary file instead
@@ -89,7 +89,7 @@ def python_gaugan(img, layer):
     os.unlink(f.name)
     # send to Gaugan API
     gaugan = GauganAPI()
-    jpg = gaugan.convert(data)
+    jpg = gaugan.convert(data, style)
     # save result to a temporary file, because pdb cannot load from a buffer
     f = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
     open(f.name, "wb").write(jpg)
@@ -111,7 +111,9 @@ register(
     "2019",
     "<Image>/Filters/GauGAN...",
     "RGB*",
-    [],
+    [
+        (PF_STRING, "style", "style", "random"),
+    ],
     [],
     python_gaugan)
 
