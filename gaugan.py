@@ -84,6 +84,7 @@ def python_gaugan(img, layer, style="random"):
         raise ValueError("Expected RGB layer")
     # because pdb cannot save to a buffer, we have to use a temporary file instead
     f = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
+    f.close()
     pdb.file_png_save(img, layer, f.name, f.name, 0, 9, 0, 0, 0, 0, 0)
     data = open(f.name, "rb").read()
     os.unlink(f.name)
@@ -92,6 +93,7 @@ def python_gaugan(img, layer, style="random"):
     jpg = gaugan.convert(data, style)
     # save result to a temporary file, because pdb cannot load from a buffer
     f = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
+    f.close()
     open(f.name, "wb").write(jpg)
     # open the temp file
     image = pdb.gimp_file_load(f.name, f.name)
