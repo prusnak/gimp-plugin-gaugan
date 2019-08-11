@@ -22,3 +22,7 @@ Put the `gaugan.py` script into the GIMP plug-ins folder (create the folder if i
 ## Palette
 
 ![palette](palette.png)
+
+## Original Demo
+
+The original Live Interactive Demo is available from [NVIDIA AI Playground](https://www.nvidia.com/en-us/research/ai-playground/).
