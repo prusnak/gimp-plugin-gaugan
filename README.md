@@ -18,3 +18,7 @@ Put the `gaugan.py` script into the GIMP plug-ins folder (create the folder if i
 2. The image can only contain colors from the GauGAN palette. See the files `palette.html` or `palette.png` for details.
 3. Use `Filters > GauGAN` menu item to process the segmentation map you created (the selected layer will be processed).
 4. You can use the following values as `style` parameter: `random`, `0`, `1`, ... , `8`, `9`, `10`.
+
+## Palette
+
+![palette](palette.png)
