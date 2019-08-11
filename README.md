@@ -2,6 +2,8 @@
 
 By using this plugin you agree to NVIDIA RESEARCH AI PLAYGROUND TERMS OF USE (terms.txt).
 
+This plugin only works with 512x512 RGB images.
+
 ## Installation
 
 Put the `gaugan.py` script into the GIMP plug-ins folder (create the folder if it does not exist):

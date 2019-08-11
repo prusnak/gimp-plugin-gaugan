@@ -115,7 +115,7 @@ def python_gaugan(img, layer, style="random"):
     pdb.file_png_save(img, layer, f.name, f.name, 0, 9, 0, 0, 0, 0, 0)
     data = open(f.name, "rb").read()
     os.unlink(f.name)
-    # send to Gaugan API
+    # send to GauGAN API
     gaugan = GauganAPI()
     jpg = gaugan.convert(data, style)
     # save result to a temporary file, because pdb cannot load from a buffer
@@ -129,7 +129,7 @@ def python_gaugan(img, layer, style="random"):
     os.unlink(f.name)
     # paste clipboard contents as a floating selection
     floating = pdb.gimp_edit_paste(layer, 0)
-    floating.name = layer.name + " [Gaugan]"
+    floating.name = layer.name + " [GauGAN]"
 
 register(
     "python_fu_gaugan",
