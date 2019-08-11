@@ -1,6 +1,6 @@
 # GauGAN plugin for GIMP
 
-By using this plugin you agree to NVIDIA RESEARCH AI PLAYGROUND TERMS OF USE (terms.txt).
+By using this plugin you agree to NVIDIA RESEARCH AI PLAYGROUND [TERMS OF USE](http://34.220.80.140/gaugan/term.txt)!
 
 ![wilbur](wilbur.png) ![gaugan](wilbur-gaugan.jpg)
 
