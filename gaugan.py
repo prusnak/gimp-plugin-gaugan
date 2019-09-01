@@ -40,9 +40,11 @@ API = [
     "http://34.221.104.254:443/",
     "http://34.220.80.140:443/",
     "http://54.212.242.58:443/",
+    "http://52.40.189.27:443/",
+    "http://52.39.146.246:443/",
 ]
-ORIGIN = "http://34.220.80.140"
-REFERER = "http://34.220.80.140/gaugan/"
+ORIGIN = "http://34.216.122.111"
+REFERER = "http://34.216.122.111/gaugan"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
 
 
