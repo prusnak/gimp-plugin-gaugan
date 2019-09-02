@@ -204,13 +204,26 @@ body {
 <pre class="box">#zebra             #17aed2</pre>
 
 <script type="text/javascript">
-    var boxes = document.getElementsByClassName("box");
-    for (var i = 0; i < boxes.length; i++) {
-        var e = boxes[i];
-        var str = e.innerText;
-        var color = str.substring(str.length - 7, str.length);
-        e.style.backgroundColor = color;
+    const convertHEX = (hex) => {
+      hex = `0x${hex.replace("#", '')}`;
+      let [r, g, b] = [hex >> 16, hex >> 8, hex];
+      return [r & 255, g & 255, b & 255];
     }
+
+    const autoContrast = (color) => {
+      let [r, g, b] = convertHEX(color);
+      [r, g, b] = [r * 0.2126, g * 0.7152, b * 0.0722];
+      return (r + g + b) >= 128 ? "black" : "white";
+    }
+
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach(item => {
+      const color = `${/#([A-F\d]{6})/i.exec(item.textContent)[0]}`;
+      item.textContent = item.textContent.replace(color, color.toUpperCase());
+      item.style.color = autoContrast(color);
+      item.style.backgroundColor = color;
+    });
 </script>
 
 </body>
